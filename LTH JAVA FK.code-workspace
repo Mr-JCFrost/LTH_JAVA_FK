@@ -7,5 +7,9 @@
 			"path": "Labb 00"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"java.project.sourcePaths": [
+			"Labb 01/src"
+		]
+	}
 }
