@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"java.project.sourcePaths": [
+			"test",
+			"src",
+			"lib"
+		],
+		"java.project.referencedLibraries": [
+			"c:\\Users\\jensc\\Documents\\-=UTVECKLING=-\\-=JAVA=-\\LTH JAVA FK\\Labb 01\\lib\\junit-platform-console-standalone-1.13.0-M3.jar"
+		]
+	}
+}
