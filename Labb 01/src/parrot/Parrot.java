@@ -2,18 +2,22 @@ package parrot;
 
 public class Parrot {
 
+    //ATTRIBUT
     private final ParrotTypeEnum type;
     private final int numberOfCoconuts;
     private final double voltage;
     private final boolean isNailed;
 
+    //KONSTRUKTOR SOM INNEHÅLLER PARAMETRAR
     public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
+        //ATTRIBUT
         this.type = type;
         this.numberOfCoconuts = numberOfCoconuts;
         this.voltage = voltage;
         this.isNailed = isNailed;
     }
 
+    //METOD
     public double getSpeed() {
         return switch (type) {
             case EUROPEAN -> getBaseSpeed();
@@ -35,4 +39,19 @@ public class Parrot {
         return 12.0;
     }
 
+    public String getNest() {
+        return "poop";
+    }
+
+/*
+    public String getNest() {
+        this.String result = "";
+        return switch (type) {
+            case EUROPEAN : result = "Europe";
+            case AFRICAN : result = "Africa";
+            case NORWEGIAN_BLUE : result = "Norway";
+            default : result = "Should be unreachable";
+        };
+        return result;
+    }*/
 }
