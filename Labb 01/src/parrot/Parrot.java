@@ -40,7 +40,23 @@ public class Parrot {
     }
 
     public String getNest() {
-        return "poop";
+        String result = "";
+        return switch (type) {
+            case EUROPEAN:
+                yield ("nest of sticks");
+            case AFRICAN:
+                yield   ("hole in a tree");
+            case NORWEGIAN_BLUE:
+                if (this.isNailed == true) {
+                    yield   ("in a cage");
+                }else{
+                    yield   ("nowhere");
+                }
+
+            default:
+                yield   ("Norway");
+        };
+
     }
 
 /*

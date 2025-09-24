@@ -52,9 +52,30 @@ public class ParrotTest {
     //NYA TEST
 
     @Test
-    public void  getNestLocationAfrican() {
-        //Assertions.assertFalse(true);
+    public void  getNestLocationAfricanParrot() {
+        //Raden nedan "tillverkar" min Parrot
         Parrot parrot = ParrotFactory.getParrot(ParrotTypeEnum.AFRICAN, 0, 3.3, false);
-        assertEquals( "poop", parrot.getNest() );
+        assertEquals( "hole in a tree", parrot.getNest() );
+    }
+
+
+    @Test
+    public void getNestLocationEuropeanParrot() {
+        Parrot parrot = ParrotFactory.getParrot(ParrotTypeEnum.EUROPEAN, 0, 3.3, false);
+        assertEquals( "nest of sticks", parrot.getNest() );
+    }
+
+
+    @Test
+    public void getNestLocationNorwegianBlueParrot_not_nailed() {
+        Parrot parrot = ParrotFactory.getParrot(ParrotTypeEnum.NORWEGIAN_BLUE, 0, 5, false);
+        assertEquals( "nowhere", parrot.getNest() );
+    }
+
+    @Test
+    public void getNestLocationNorwegianBlueParrot_nailed() {
+        Parrot parrot = ParrotFactory.getParrot(ParrotTypeEnum.NORWEGIAN_BLUE, 0,5, true);
+        assertEquals( "in a cage", parrot.getNest() );
     }
 }
+
