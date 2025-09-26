@@ -1,12 +1,12 @@
 package parrot;
 
-public class Parrot {
+public abstract class Parrot {
 
     //ATTRIBUT
     private final ParrotTypeEnum type;
-    private final int numberOfCoconuts;
-    private final double voltage;
-    private final boolean isNailed;
+    protected final int numberOfCoconuts;
+    protected final double voltage;
+    protected final boolean isNailed;
 
     //KONSTRUKTOR SOM INNEHÅLLER PARAMETRAR
     public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
@@ -17,17 +17,20 @@ public class Parrot {
         this.isNailed = isNailed;
     }
 
+
+
     //METOD
-    public double getSpeed() {
-        return switch (type) {
+    public abstract double getSpeed();
+    /*{
+        /*return switch (type) {
             case EUROPEAN -> getBaseSpeed();
             case AFRICAN -> Math.max(0, getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
             case NORWEGIAN_BLUE -> (isNailed) ? 0 : getBaseSpeed(voltage);
             default -> throw new RuntimeException("Should be unreachable");
         };
-    }
+    }*/
 
-    private double getBaseSpeed(double voltage) {
+    protected double getBaseSpeed(double voltage) {
         return Math.min(24.0, voltage * getBaseSpeed());
     }
 
@@ -35,11 +38,15 @@ public class Parrot {
         return 9.0;
     }
 
-    private double getBaseSpeed() {
+    protected static double getBaseSpeed() {
         return 12.0;
     }
 
-    public String getNest() {
+
+
+    public abstract String getNest();
+    // public String getNest() {}
+    /*public String getNest() {
         String result = "";
         return switch (type) {
             case EUROPEAN:
@@ -57,7 +64,7 @@ public class Parrot {
                 yield   ("Norway");
         };
 
-    }
+    }*/
 
 /*
     public String getNest() {
